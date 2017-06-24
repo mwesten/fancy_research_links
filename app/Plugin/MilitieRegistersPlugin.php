@@ -20,20 +20,20 @@ use JustCarmen\WebtreesAddOns\FancyResearchLinks\FancyResearchLinksClass;
 
 class MilitieRegistersPlugin extends FancyResearchLinksClass {
 
-	static function getPluginName() {
-		return 'Militieregisters($)';
-	}
+  static function getPluginName() {
+    return 'Militieregisters($)';
+  }
 
-	static function getSearchArea() {
-		return 'NLD';
-	}
+  static function getSearchArea() {
+    return 'NLD';
+  }
 
-	static function createLink($name) {
-		return 'http://militieregisters.nl/zoek#?focus%3Dd00%26p04%3D' . $name['givn'] . '%26p05%3D' . $name['prefix'] . '%26p06%3D' . $name['surn'];
-	}
+  static function createLink($name) {
+    return 'http://militieregisters.nl/zoek#?focus%3Dd00%26p04%3D' . $name['givn'] . '%26p05%3D' . $name['prefix'] . '%26p06%3D' . $name['surn'];
+  }
 
-	static function encodePlus() {
-		return true;
-	}
+  static function encodePlus() {
+    return true;
+  }
 
 }

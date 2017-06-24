@@ -20,20 +20,20 @@ use JustCarmen\WebtreesAddOns\FancyResearchLinks\FancyResearchLinksClass;
 
 class OnlineFamilieberichtenPlugin extends FancyResearchLinksClass {
 
-	static function getPluginName() {
-		return 'Online Familieberichten';
-	}
+  static function getPluginName() {
+    return 'Online Familieberichten';
+  }
 
-	static function getSearchArea() {
-		return 'NLD';
-	}
+  static function getSearchArea() {
+    return 'NLD';
+  }
 
-	static function createLink($name) {
-		return 'http://www.online-familieberichten.nl/zoeken.asp?sortpers=naam&voornaam=' . $name['givn'] . '&tussenvoegsel=' . $name['prefix'] . '&achternaam=' . $name['surn'] . '&command=zoekformres';
-	}
+  static function createLink($name) {
+    return 'http://www.online-familieberichten.nl/zoeken.asp?sortpers=naam&voornaam=' . $name['givn'] . '&tussenvoegsel=' . $name['prefix'] . '&achternaam=' . $name['surn'] . '&command=zoekformres';
+  }
 
-	static function encodePlus() {
-		return true;
-	}
+  static function encodePlus() {
+    return true;
+  }
 
 }
