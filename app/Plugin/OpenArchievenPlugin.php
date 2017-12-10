@@ -19,27 +19,25 @@ namespace JustCarmen\WebtreesAddOns\FancyResearchLinks\Plugin;
 use JustCarmen\WebtreesAddOns\FancyResearchLinks\FancyResearchLinksClass;
 
 class OpenArchievenPlugin extends FancyResearchLinksClass {
+	public static function getPluginName() {
+		return 'Open Archieven';
+	}
 
-  static function getPluginName() {
-    return 'Open Archieven';
-  }
+	public static function getSearchArea() {
+		return 'NLD';
+	}
 
-  static function getSearchArea() {
-    return 'NLD';
-  }
+	public static function createLink($name) {
+		$languages = ['de', 'en', 'fr', 'nl'];
 
-  static function createLink($name) {
-    $languages = ['de', 'en', 'fr', 'nl'];
+		$language = WT_LOCALE;
+		if (!in_array($language, $languages)) {
+			$language = 'en';
+		}
+		return 'https://www.openarch.nl/search.php?lang=' . $language . '&name=' . $name['fullname'] . '&number_show=10&sort=1';
+	}
 
-    $language = WT_LOCALE;
-    if (!in_array($language, $languages)) {
-      $language = 'en';
-    }
-    return 'https://www.openarch.nl/search.php?lang=' . $language . '&name=' . $name['fullname'] . '&number_show=10&sort=1';
-  }
-
-  static function encodePlus() {
-    return true;
-  }
-
+	public static function encodePlus() {
+		return true;
+	}
 }
